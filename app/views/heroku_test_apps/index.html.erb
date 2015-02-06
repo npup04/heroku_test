@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Heroku Test Apps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @heroku_test_apps.each do |heroku_test_app| %>
+      <tr>
+        <td><%= heroku_test_app.name %></td>
+        <td><%= link_to 'Show', heroku_test_app %></td>
+        <td><%= link_to 'Edit', edit_heroku_test_app_path(heroku_test_app) %></td>
+        <td><%= link_to 'Destroy', heroku_test_app, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Heroku test app', new_heroku_test_app_path %>
